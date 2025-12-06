@@ -42,10 +42,11 @@ Checkstyle, JDepend, ESLint/Pylint/RuboCop permite identificar las
 herramientas más adecuadas para analizar el cumplimiento de la
 mantenibilidad.
 
-![Cuadro comparativo Mantenibilidad](/images/mantenibilidad_diagrama.png)
+![Cuadro comparativo Mantenibilidad](mantenibilidad_diagrama.png)
 
 Basados en el cuadro comparativo, la práctica en el sector de calidad de
 software y para garantizar la evaluación integral de mantenibilidad
 según ISO 25010, la mejor estrategia es combinar el uso de SonarQube
 como plataforma central y Linter específico del lenguaje para la
 realimentación inmediata durante desarrollo.
+
