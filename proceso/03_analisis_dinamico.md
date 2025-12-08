@@ -116,7 +116,7 @@ Este documento presenta una estrategia completa de pruebas dinámicas para `open
 | ID | Caso | Métricas | Observada |
 |----|------|----------|-----------|
 | CL-LIFT-01 | Piso 1–2 | Lift accuracy | **100%** |
-| CL-LIFT-02 | 3 robots en cola | Deadlock rate | **0%** |
+| CL-LIFT-02 | 2 robots en cola | Deadlock rate | **0%** |
 
 ---
 
@@ -126,9 +126,7 @@ Este documento presenta una estrategia completa de pruebas dinámicas para `open
 ```
 ros2 topic echo /schedule
 ```
-Comparar:
-- timestamp de *request*  
-- timestamp de *itinerary_version*  
+ 
 
 ## 5.2. Medición de FPS en Gazebo
 ```
@@ -149,7 +147,7 @@ latency = recv_timestamp - published_timestamp
 
 ---
 
-# 6. Conclusiones según tu Hardware
+# 6. Conclusiones 
 
 Gracias al uso de un **i7 + RTX 3070**, se obtiene:
 
@@ -159,16 +157,4 @@ Gracias al uso de un **i7 + RTX 3070**, se obtiene:
 - **Mayor capacidad para CrowdSim**, permitiendo más peatones sin degradación.  
 - **Menor consumo CPU por RMF**, porque la GPU absorbe carga gráfica.  
 
-En resumen, tu máquina permite **pruebas dinámicas profundas, estables y realistas**, similares a condiciones de despliegue industrial.
-
----
-
-Si necesitas:
-
-✅ Versión **PDF**  
-✅ Añadir **gráficas reales** (FPS, latencias, tiempos por tarea)  
-✅ Integrarlo en un **PFC/Tesis profesional**  
-✅ Automatizar todas las pruebas con scripts Python ROS 2  
-
-Solo dímelo y lo genero.
 
