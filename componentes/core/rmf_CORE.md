@@ -1,132 +1,120 @@
-# RMF Demos — Contexto General de Mundos y Estructura del Proyecto
+# RMF Demos
 
-(Contenido basado únicamente en el README original del repositorio, manteniendo estructura, nombres de mundos y sus imágenes.)
+![](https://github.com/open-rmf/rmf_demos/workflows/build/badge.svg)
+![](https://github.com/open-rmf/rmf_demos/workflows/style/badge.svg)
 
----
+The Open Robotics Middleware Framework (Open-RMF) enables interoperability among heterogeneous robot fleets while managing robot traffic that share resources such as space, building infrastructure systems (lifts, doors, etc) and other automation systems within the same facility. Open-RMF also handles task allocation and conflict resolution among its participants. These capabilities are provided by various libraries in [Open-RMF](https://github.com/open-rmf/rmf).
 
-## 1. Introducción
+For more details about Open-RMF, refer to the documentation provided [here](https://osrf.github.io/ros2multirobotbook/intro.html).
 
-El repositorio **RMF Demos** contiene una colección de mundos diseñados para demostrar las capacidades del *Open Robotics Middleware Framework (Open-RMF)* en escenarios de tráfico multi-robot, infraestructura compartida y sistemas de coordinación como ascensores, puertas y estaciones de dispensado.
+This repository contains demonstrations of the above capabilities of Open-RMF. It serves as a starting point for working and integrating with Open-RMF.
 
----
+You can also find a demonstration using `Nav2` and `MoveIt!` in the [Ionic Release Demo](https://github.com/gazebosim/ionic_demo).
 
-## 2. Estructura General del Proyecto
+[![Robotics Middleware Framework](../media/thumbnail.png?raw=true)](https://vimeo.com/405803151)
 
-| Carpeta | Contenido |
-|---------|-----------|
-| **rmf_demos_gz/** | Archivos `*.launch.xml` para ejecutar los mundos en Gazebo/Ignition. |
-| **rmf_demos_maps/** | Mapas creados con *traffic_editor*. |
-| **rmf_demos_tasks/** | Scripts para despachar tareas como delivery, loop, clean y patrol. |
-| **rmf_demos_assets/** | Modelos 3D y recursos usados por los mundos. |
-| **rmf_demos_bridges/** | Puentes como el bridge MQTT para RobotManager. |
-| **docs/** | Documentación adicional, incluyendo Secure Office, FAQ, etc. |
+#### (Click to watch video)
 
 ---
 
-## 3. Mundos disponibles
+# Project Structure
 
-### 3.1. Hotel World
+The repository is organized into the following main components:
 
-Mundo con lobby y dos niveles superiores. Incluye ascensores, puertas y tres flotas de robots.
+| Directory | Description |
+|----------|-------------|
+| **rmf_demos_gz/** | Simulation launch files (`*.launch.xml`) for Gazebo/Ignition worlds. |
+| **rmf_demos_maps/** | Maps created using *traffic_editor* for each demonstration world. |
+| **rmf_demos_tasks/** | Task scripts for different behaviors such as delivery, loop, patrol, cleaning, etc. |
+| **rmf_demos_assets/** | 3D models and assets used across the demo environments. |
+| **rmf_demos_bridges/** | Interfaces such as MQTT bridges for integration with external systems. |
+| **docs/** | Additional documentation, including secure world configurations and FAQs. |
+
+---
+
+# Demo Worlds
+
+Below are the available simulation worlds included in this repository.  
+**All original images and media references are preserved exactly as in the source README.**
+
+---
+
+## Hotel World
+
+This hotel world consists of a lobby and 2 guest levels. The environment includes two lifts, multiple doors and three robot fleets. It demonstrates multi-level navigation and interoperability among heterogeneous robots.
 
 ![](../media/hotel_world.png)
+
+Robots performing loop and clean tasks:
+
 ![](../media/hotel_scenarios.gif)
 
-**Launch file:**  
-```
-hotel.launch.xml
-```
-
 ---
 
-### 3.2. Office World
+## Office World
 
-Entorno interior con puertas controladas, laneways y estaciones de dispensado e ingestión.
+An indoor office environment integrating Open-RMF features such as:
 
-![](../media/delivery_request.gif)
+- beverage dispensing station  
+- controllable doors  
+- laneways and indoor navigation  
+
+![](../media/delivery_request.gif?raw=true)
+
 ![](../media/loop_request.gif)
 
-**Launch file:**  
-```
-office.launch.xml
-```
-
 ---
 
-### 3.3. Airport Terminal World
+## Airport Terminal World
 
-Terminal aeroportuaria de gran escala con Crowd Simulation y vehículo de tipo `read_only` (caddy).
+A large-scale terminal with many lanes, destinations and robot interactions.  
+Includes Crowd Simulation and a manually operated `read_only` vehicle (Caddy).
 
 ![](../media/airport_terminal_traffic_editor_screenshot.png)
 ![](../media/airport_terminal_demo_screenshot.png)
+
+Caddy vehicle demonstration:
+
 ![](../media/caddy.gif)
 
-**Launch file:**  
-```
-airport_terminal.launch.xml
-```
-
 ---
 
-### 3.4. Clinic World
+## Clinic World
 
-Clínica con dos niveles, ascensores y diferentes flotas coordinadas.
+A two-level clinic environment with two lifts and multiple robot fleets.  
+Robots navigate between floors using lift coordination.
 
 ![](../media/clinic.png)
-![](../media/robot_taking_lift.gif)
-![](../media/clinic.gif)
 
-**Launch file:**  
-```
-clinic.launch.xml
-```
+Robots using the lift:
+
+![](../media/robot_taking_lift.gif)
+
+Multi-fleet scenario:
+
+![](../media/clinic.gif)
 
 ---
 
-### 3.5. Campus World
+## Campus World
 
-Campus exterior de gran escala, con rutas anotadas en coordenadas WGS84 e integración con RobotManager vía MQTT.
+A large-scale outdoor world using GPS WGS84 coordinates for robot navigation.  
+Demonstrates long-range delivery and fleet coordination across a campus.
 
 ![](../media/campus.gif)
 
-**Launch file:**  
-```
-campus.launch.xml
-```
+---
+
+## Manufacturing & Logistics World
+
+A simulation showcasing interoperability in industrial workflows, including manipulators, conveyors and multiple AMR fleets.
+
+<p align="center">
+<a href="https://www.youtube.com/watch?v=oSVQrjx_4w4">
+<img src="https://img.youtube.com/vi/oSVQrjx_4w4/0.jpg">
+</a>
+</p>
 
 ---
 
-### 3.6. Manufacturing & Logistics World
-
-Simulación industrial con manipuladores, conveyors y AMRs interoperando mediante Open-RMF.
-
-![](https://img.youtube.com/vi/oSVQrjx_4w4/0.jpg)
-
----
-
-## 4. Demos adicionales
-
-### Traffic Light Robot Demos
-
-| Escenario | Archivo |
-|----------|---------|
-| Triple-H | `triple_H.launch.xml` |
-| Battle Royale | `battle_royale.launch.xml` |
-| Office Traffic Light | `office_mock_traffic_light.launch.xml` |
-
----
-
-## 5. Funcionalidades adicionales del repositorio
-
-- Flexible Task Scripts  
-- Lift Watchdog  
-- Custom Docking Sequence  
-- Emergency Alarm  
-- Task Dispatching mediante proceso de bidding  
-
----
-
-## 6. Resumen final
-
-Este repositorio reúne múltiples mundos listos para ejecución en Gazebo/Ignition, representando distintos escenarios reales donde Open-RMF coordina robots, infraestructura y tareas. Cada mundo refleja un caso práctico y sirve como base para simulación, investigación o integración con sistemas robóticos reales.
-
+This README summarizes the core structure and demonstration worlds provided in the RMF Demos repository, preserving all contextual descriptions and original media references.
