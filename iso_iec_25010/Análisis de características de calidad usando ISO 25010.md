@@ -1,12 +1,14 @@
-¡Excelente iniciativa\! Realizar una evaluación de calidad basada en la norma ISO 25010 para las aplicaciones **rmf-web** y **rmf-demos** es fundamental para asegurar su robustez y mantenibilidad, especialmente considerando los lenguajes utilizados (C++, Python, TypeScript, JavaScript).
-
-A continuación, se presenta la información solicitada en los primeros cuatro puntos. El punto 5 requiere ejecutar herramientas de análisis estático y dinámico en los archivos ZIP, lo cual va más allá de mis capacidades actuales como modelo de lenguaje, pero puedo guiarle sobre cómo podría obtener esas métricas.
-
 ## ---
 
 **1\. 💡 Métricas Principales por Característica de Calidad ISO 25010**
 
-El modelo ISO/IEC 25010 define las características de calidad del producto software. A continuación, se identifican métricas relevantes para cada una de las características que mencionó, aplicables a los lenguajes de programación indicados (C++, Python, TypeScript, JavaScript).
+Contexto
+Para el análisis de característica de calidad, usando la ISO 25010, se consideran 2 componentes importantes [rmf-core](https://github.com/open-rmf/rmf_demos.git) y [rmf-web](https://github.com/open-rmf/rmf-web.git) del proyecto [Open-RMF](https://www.open-rmf.org/). Los lenguajes de programación de ambos componentes son:
+* rmf-core: C++
+* rmf_web: TypeScript / JavaScript / Python
+
+El modelo ISO/IEC 25010 define las características de calidad del producto software, tales como Adecuación Funcional, Eficiencia de Desempeño,
+ Compatibilidad, Capacidad de Interacción, Fiabilidad, Seguridad, Mantenibilidad, Flexibilidad y Protección. Ahora bien, aplicando el modelo ISO 25010 a nuestro contexto nos permite identificar métricas relevantes para cada una de las características mencionadas, aplicables a los lenguajes de programación indicados: C++, Python, TypeScript, JavaScript.
 
 | Característica de Calidad | Métrica Principal (Ejemplos) | Subcaracterística Relacionada |
 | :---- | :---- | :---- |
