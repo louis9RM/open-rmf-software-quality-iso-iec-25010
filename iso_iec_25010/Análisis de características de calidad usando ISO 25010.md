@@ -1,8 +1,6 @@
-## ---
+**1\. Métricas Principales por Característica de Calidad ISO 25010**
 
-**1\. 💡 Métricas Principales por Característica de Calidad ISO 25010**
-
-Contexto
+*** Contexto ***
 Para el análisis de característica de calidad, usando la ISO 25010, se consideran 2 componentes importantes [rmf-core](https://github.com/open-rmf/rmf_demos.git) y [rmf-web](https://github.com/open-rmf/rmf-web.git) del proyecto [Open-RMF](https://www.open-rmf.org/). Los lenguajes de programación de ambos componentes son:
 * rmf-core: C++
 * rmf_web: TypeScript / JavaScript / Python
@@ -14,31 +12,32 @@ El modelo ISO/IEC 25010 define las características de calidad del producto soft
 | :---- | :---- | :---- |
 | **Adecuación Funcional** | **Porcentaje de Cobertura de Requisitos Funcionales** ($\\%\\text{CRF}$) | Completitud Funcional |
 |  | **Tasa de Errores Funcionales por Módulo/Prueba** ($\\frac{\\text{No. Errores}}{\\text{No. Módulos/Pruebas}}$) | Corrección Funcional |
-| **Eficiencia de Desempeño** | **Tiempo de Respuesta Promedio** ($\\text{TR}$ en ms o s) | Comportamiento Temporal |
+| **Eficiencia de Desempeño** | **Tiempo de Respuesta Promedio** ($\\text{TR}$ en ms) | Comportamiento Temporal |
 |  | **Utilización de CPU/Memoria bajo Carga** ($\\text{Recursos}$ en $\\%$ o MB) | Utilización de Recursos |
 |  | **Tasa de Transacciones por Segundo** ($\\text{TPS}$) o **Latencia Promedio** ($\\text{L}$ en ms) | Capacidad |
 | **Compatibilidad** | **Porcentaje de Interoperabilidad Exitosa** ($\\%\\text{IE}$) | Interoperabilidad |
 |  | **Porcentaje de Recursos Compartidos sin Conflicto** ($\\%\\text{RSC}$) | Coexistencia |
 | **Capacidad de Interacción** (Usabilidad) | **Tasa de Éxito de Tareas** ($\\%\\text{ET}$) / **Tiempo para Realizar Tarea** ($\\text{TTRT}$) | Operabilidad / Aprendizabilidad |
-|  | **Nivel de Satisfacción del Usuario** (e.g., Net Promoter Score, $\\text{CSAT}$) | Satisfacción del Usuario |
+|  | **Nivel de Satisfacción del Usuario** (p.e., Net Promoter Score, $\\text{CSAT}$) | Satisfacción del Usuario |
 | **Fiabilidad** | **Tiempo Medio Entre Fallos** ($\\text{MTBF}$ en horas) | Madurez |
-|  | **Tiempo Medio de Recuperación** ($\\text{MTTR}$ en minutos u horas) | Capacidad de Recuperación |
+|  | **Tiempo Medio de Recuperación** ($\\text{MTTR}$ en minutos) | Capacidad de Recuperación |
 |  | **Densidad de Defectos por Mil Líneas de Código** ($\\text{DLOC}$ por KLOC) | Tolerancia a Fallos |
 | **Seguridad** | **Tasa de Vulnerabilidades de Gravedad Alta y Media** ($\\text{VGA}$ / $\\text{VGM}$) | Confidencialidad / Integridad |
 |  | **Porcentaje de Cobertura de Pruebas de Seguridad** ($\\%\\text{CPS}$) | Resistencia a Ataques |
 | **Mantenibilidad** | **Complejidad Ciclomática Promedio por Módulo** ($\\text{CC}$ promedio) | Analizabilidad |
 |  | **Índice de Mantenibilidad** ($\\text{IM}$ / $\\text{Maintainability Index}$) | Capacidad de Modificación |
-|  | **Acoplamiento / Cohesión** (e.g., $\\text{CBO}$ / $\\text{LCOM}$) | Modularidad |
+|  | **Acoplamiento / Cohesión** (p.e., $\\text{CBO}$ / $\\text{LCOM}$) | Modularidad |
 | **Flexibilidad** (Portabilidad) | **Tiempo de Adaptación a Nuevo Entorno** ($\\text{TA}$ en horas) | Adaptabilidad |
 |  | **Número de Pasos de Instalación/Configuración** ($\\text{NPI}$) | Capacidad para ser Instalado |
 | **Protección** (Parte de Seguridad) | **Porcentaje de Implementación de Controles de Acceso** ($\\%\\text{CA}$) | Control de Acceso |
 |  | **Existencia de Pistas de Auditoría/Trazabilidad** ($\\text{PAT}$) | No Repudio / Responsabilidad |
 
-## ---
 
-**2\. 📊 Tabla de Características de Calidad vs. Indicadores y Umbrales**
+**2\. Tabla de Características de Calidad vs. Indicadores y Umbrales**
 
-Definir umbrales aceptables es un ejercicio que depende del contexto (misión crítica, requisitos específicos, etc.). Los valores presentados aquí son **sugerencias generales** basadas en buenas prácticas de la industria para un software de calidad aceptable.
+Open RMF permite compartir información y facilitar la interoperabilidad de flotas de robots y las infraestructuras físicas subyacentes. En este contexto, se utlizan un conjunto de protocolos e interfaces de comunicación estandarizados que facilitan el intercambio de datos, señales de control e información adicional  entre robots, sensores, actuadores y otros dispositivos. Por lo expuesto, se puede consierar que Open-RMF es un software de misión crítico y bajo dicho contexto se deben definir los umbrales aceptables de cada una de las características aplicables a nuestro caso.
+
+ A continuación, se presentan los valores como **recomendados** basadas en buenas prácticas de la industria para un software de calidad aceptable.
 
 | Característica | Indicador / Métrica | Fórmula de Cálculo / Descripción | Umbral Aceptable (Sugerido) |
 | :---- | :---- | :---- | :---- |
@@ -54,11 +53,10 @@ Definir umbrales aceptables es un ejercicio que depende del contexto (misión cr
 | **Flexibilidad** (Portabilidad) | Porcentaje de Código Dependiente de Plataforma | $\\frac{\\text{No. Líneas de código no portables}}{\\text{No. Total de líneas de código}} \\times 100$ | $\\le 5\\%$ (Cuanto menor, mejor) |
 | **Protección** (Seguridad) | Cobertura de Controles de Acceso | $\\frac{\\text{No. Funciones con control de acceso implementado}}{\\text{No. Funciones que lo requieren}} \\times 100$ | $\\ge 100\\%$ para funciones sensibles |
 
-## ---
 
-**3\. 🛠️ Herramientas Open Source para Métricas de Calidad**
+**3\. Herramientas Open Source para Métricas de Calidad**
 
-Las herramientas *Open Source* son esenciales para automatizar la obtención de métricas de calidad, especialmente en proyectos con múltiples lenguajes como RMF.
+Para realizar el análisis de calidad, dentro de njuestro contexto se ha considerado el uso de herramientas open source gracias a su acceso, disponibilidad y caracterísiticas relevantes de sus funcionalidades técnicas para su uso. Las herramientas open source permiten automatizar la obtención de métricas de calidad, especialmente en proyectos con múltiples lenguajes como Open-RMF.
 
 | Característica de Calidad | Herramienta Open Source Sugerida | Tipo de Análisis | Lenguajes Soportados (Relevantes) |
 | :---- | :---- | :---- | :---- |
@@ -75,25 +73,25 @@ Las herramientas *Open Source* son esenciales para automatizar la obtención de 
 |  | **radon** | Métricas de Complejidad | Python |
 |  | **Cloc / Loc (Lineas de Código)** | Tamaño del Código / Comentarios | Todos |
 
-## ---
 
-**4\. 🖼️ Cuadro Comparativo de Herramientas**
+**4\. Cuadro Comparativo de Herramientas**
 
-Nos centraremos en tres herramientas clave que cubren la mayoría de los lenguajes y características: **SonarQube (Comunidad)**, **Pytest/Jest** (representando pruebas unitarias) y **JMeter/Locust** (representando pruebas de rendimiento).
+El equipo definido el uso de tres herramientas que cubren la mayoría de los lenguajes y características de calidad definidos para nuestro caso:
+* **SonarQube (Community)** (pruebas de Fiabilidad, Seguridad, Mantenibilidad)
+* **Pytest/Jest** (pruebas unitarias)
+* **JMeter/Locust** (pruebas de rendimiento).
 
 | Herramienta Open Source | Característica de Calidad Cubierta | Métricas Principales Obtenidas | Lenguajes Soportados |
 | :---- | :---- | :---- | :---- |
-| **SonarQube (Comunidad)** | Fiabilidad, Seguridad, Mantenibilidad | **IM** (Índice de Mantenibilidad), **CC** (Complejidad Ciclomática), Densidad de *Bugs* y Vulnerabilidades, **Duplicación** de Código. | C++, Python, TypeScript, JavaScript, y muchos más. |
+| **SonarQube (Community)** | Fiabilidad, Seguridad, Mantenibilidad | **IM** (Índice de Mantenibilidad), **CC** (Complejidad Ciclomática), Densidad de *Bugs* y Vulnerabilidades, **Duplicación** de Código. | C++, Python, TypeScript, JavaScript, y muchos más. |
 | **Pytest / Jest** (Tests Unitarios) | Adecuación Funcional, Fiabilidad | **% Cobertura de Código** (Líneas, Ramas), **Tasa de Éxito de Pruebas**, Fallos en Pruebas. | Python (Pytest), TypeScript/JS (Jest) |
 | **JMeter / Locust** (Pruebas de Carga) | Eficiencia de Desempeño | **TR** (Tiempo de Respuesta), **TPS** (Transacciones por Segundo), **Latencia**, Errores por Carga. | Agnostic (Simula usuarios contra la URL/API) |
 | **Bandit** | Seguridad | **Vulnerabilidades de Seguridad** (Gravedad Alta, Media, Baja) específicas de Python. | Python |
 | **Cloc** | Mantenibilidad (Tamaño) | **LOC** (Líneas de Código), $\\text{Líneas en Blanco}$, $\\text{Líneas de Comentarios}$. | Todos |
 
-## ---
+**5\. Obtención de Métricas**
 
-**5\. 🎯 Obtención de Métricas**
-
-Como se mencionó, no puedo ejecutar software directamente en los archivos ZIP, pero le proporciono los **pasos recomendados** para obtener las métricas de análisis estático y dinámico utilizando las fuentes (rmf-web-main.zip y rmf\_demos-main.zip).
+Para la obtención de las métricas de análisis estático y dinámico, utilizando las fuentes (rmf-web-main.zip y rmf\_demos-main.zip), se proporcionan los **pasos recomendados** siguientes:
 
 ### **Pasos para el Análisis Estático (Mantenibilidad, Fiabilidad, Seguridad)**
 
@@ -110,7 +108,3 @@ Como se mencionó, no puedo ejecutar software directamente en los archivos ZIP, 
 3. **Pruebas de Cobertura de Código:**  
    * Si existen pruebas unitarias (muy probable en proyectos de esta índole): ejecute pytest para Python y jest para TypeScript/JavaScript.  
    * **Métrica a obtener:** **% Cobertura de Pruebas Unitarias** (líneas, ramas).
-
----
-
-¿Le gustaría que le **ayude a redactar los comandos de la terminal para iniciar un escaneo de SonarQube** en la estructura de carpetas que espera encontrar después de descomprimir los archivos ZIP?
