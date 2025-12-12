@@ -1,7 +1,7 @@
 **1\. Métricas Principales por Característica de Calidad ISO 25010**
 
 ***Contexto***
-Para el análisis de característica de calidad, usando la ISO 25010, se consideran 2 componentes importantes [rmf-core](https://github.com/open-rmf/rmf_demos.git) y [rmf-web](https://github.com/open-rmf/rmf-web.git) del proyecto [Open-RMF](https://www.open-rmf.org/). Los lenguajes de programación usados el los componentes son:
+Para el análisis de característica de calidad, usando la ISO 25010, se consideran 2 componentes importantes [rmf-core](https://github.com/open-rmf/rmf_demos.git) y [rmf-web](https://github.com/open-rmf/rmf-web.git) del proyecto [Open-RMF](https://www.open-rmf.org/). Los lenguajes de programación usados en los componentes son:
 * rmf-core: C++
 * rmf_web: TypeScript / JavaScript / Python
 
